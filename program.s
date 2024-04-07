@@ -6,8 +6,7 @@ strBuffer:  .space 23    // Reserve space for 20 digits + newline + null termina
 
 _start:
     mov     x0,     #12                         // Example number
-
-    bl      convert_to_string                   // Call the conversion function to handle negative number
+    bl      convert_to_string                   
 
     // Prepare to print the converted string
     mov     x0,     #1                          // File descriptor for stdout
