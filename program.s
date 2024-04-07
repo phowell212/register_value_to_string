@@ -28,7 +28,7 @@ convert_to_string:
 
     // Check if the number is negative
     mov     x5,     x0                          // Copy x0 to x5 for sign check
-    tbnz    x5,     #63,     negative           // If negative, jump to 'negative' label
+    tbnz    x5,     #63,     negative           // If negative, jump
 
     // Positive number, jump directly to conversion
     b       positive
@@ -48,8 +48,8 @@ positive:
 loop:
     udiv    x1,     x0,     x3
     msub    x4,     x1,     x3,     x0          // Get remainder
-
-    add     x4,     x4,     #48                 // Convert to ASCII
+    
+    add     x4,     x4,     #48                 // Convert remainder to ASCII
     strb    w4,     [x2],   #-1                 // Store character
 
     mov     x0,     x1                          // Prepare for next iteration
